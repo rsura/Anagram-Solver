@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="icon" type="image/x-icon" href="img/icon.png" />
+    <title>Anagram Solver</title>
+    <link rel="stylesheet" type="text/css" href="src/style.css"/>
+</head>
+<body>
+    <div class="menu-bar">
+        <a href="index.html" class="menu-item">
+            6 Letters
+        </a>
+        <a href="7-letters.html" class="menu-item-active">
+            7 Letters
+        </a>
+    </div>
+    <div class="container">
+        <input type="text" maxlength="1" pattern="[A-Za-z]" id="letter1" oninput="check_and_move(event, this)">
+        <input type="text" maxlength="1" pattern="[A-Za-z]" id="letter2" oninput="check_and_move(event, this)">
+        <input type="text" maxlength="1" pattern="[A-Za-z]" id="letter3" oninput="check_and_move(event, this)">
+        <input type="text" maxlength="1" pattern="[A-Za-z]" id="letter4" oninput="check_and_move(event, this)">
+        <input type="text" maxlength="1" pattern="[A-Za-z]" id="letter5" oninput="check_and_move(event, this)">
+        <input type="text" maxlength="1" pattern="[A-Za-z]" id="letter6" oninput="check_and_move(event, this)">
+        <input type="text" maxlength="1" pattern="[A-Za-z]" id="letter7" oninput="check_and_move(event, this)">
+    </div>
+    <div class="button-container">
+        <button onclick="solve()" id="submit-btn">Solve!</button>
+        <button onclick="clearInputs()" id="clear-btn">Clear</button>
+    </div>
+    <br><br><br>
+    <div id="results"></div>
+    <script src="src/solver.js" id="this_script"></script>
+</body>
+</html>
