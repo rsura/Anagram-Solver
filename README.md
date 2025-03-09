@@ -1,4 +1,4 @@
-# Anagram-Solver
+# [Anagram-Solver ↗︎](https://rsura.github.io/Anagram-Solver/)
 
 Anagram Solver is a simple javascript program that takes a word as input and returns all possible anagrams using any combination of letters.
 
