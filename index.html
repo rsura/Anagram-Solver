@@ -1,33 +1,41 @@
 <!DOCTYPE html>
-<html>
+<html prefix="og: http://ogp.me/ns#">
 <head>
     <link rel="icon" type="image/x-icon" href="img/icon.png" />
     <title>Anagram Solver</title>
     <link rel="stylesheet" type="text/css" href="src/style.css"/>
+    <meta property="og:title" content="Anagram Solver" />
+    <meta property="og:description" content="Finds all possible anagrams of given letters" />
+    <meta property="og:image" content="https://rsura.github.io/Anagram-Solver/img/demo.png" />
+    <meta property="og:url" content="https://rsura.github.io/Anagram-Solver" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Anagram Solver" />
 </head>
-<body>
+<body style="overflow: hidden; height: 100vh; margin: 0">
     <div class="menu-bar">
-        <a href="index.html" class="menu-item-active">
+        <div id="6lettermenu" class="menu-item-active" onclick="selectSixLetters()" onmouseover="this.style.cursor='pointer'">
             6 Letters
-        </a>
-        <a href="7-letters.html" class="menu-item">
+        </div>
+        <div id="7lettermenu" class="menu-item" onclick="selectSevenLetters()" onmouseover="this.style.cursor='pointer'">
             7 Letters
-        </a>
+        </div>
     </div>
-    <div class="container">
-        <input type="text" maxlength="1" pattern="[A-Za-z]" id="letter1" oninput="check_and_move(event, this)">
-        <input type="text" maxlength="1" pattern="[A-Za-z]" id="letter2" oninput="check_and_move(event, this)">
-        <input type="text" maxlength="1" pattern="[A-Za-z]" id="letter3" oninput="check_and_move(event, this)">
-        <input type="text" maxlength="1" pattern="[A-Za-z]" id="letter4" oninput="check_and_move(event, this)">
-        <input type="text" maxlength="1" pattern="[A-Za-z]" id="letter5" oninput="check_and_move(event, this)">
-        <input type="text" maxlength="1" pattern="[A-Za-z]" id="letter6" oninput="check_and_move(event, this)">
-    </div>
-    <div class="button-container">
-        <button onclick="solve()" id="submit-btn">Solve!</button>
-        <button onclick="clearInputs()" id="clear-btn">Clear</button>
-    </div>
-    <br><br><br>
-    <div id="results"></div>
-    <script src="src/solver.js" id="this_script"></script>
+    <iframe src="6-letters.html" frameborder="0" style="width: 100vw; height: 90vh;"></iframe>
+    <script>
+        function selectSixLetters() {
+            document.getElementById("6lettermenu").classList.add("menu-item-active");
+            document.getElementById("7lettermenu").classList.remove("menu-item-active");
+            document.getElementById("6lettermenu").classList.remove("menu-item");
+            document.getElementById("7lettermenu").classList.add("menu-item");
+            document.querySelector("iframe").src = "6-letters.html";
+        }
+        function selectSevenLetters() {
+            document.getElementById("7lettermenu").classList.add("menu-item-active");
+            document.getElementById("6lettermenu").classList.remove("menu-item-active");
+            document.getElementById("7lettermenu").classList.remove("menu-item");
+            document.getElementById("6lettermenu").classList.add("menu-item");
+            document.querySelector("iframe").src = "7-letters.html";
+        }
+    </script>
 </body>
 </html>
